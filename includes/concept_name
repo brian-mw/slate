@@ -1,0 +1,90 @@
+<h2 id='concept-names'>Concept names</h2><h2 id='overview'>Overview</h2>
+<ul>
+<li>ConceptNames are the words or phrases used to express the idea of a Concept within a particular locale since there can be many names for any concept.</li>
+</ul>
+<h2 id='available-resources-for-concept-names'>Available Resources for concept names</h2>
+<ul>
+<li><a href="#concept-names">Concept names</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#available-resources-for-concept-names">Available Resources for concept names</a></li>
+<li><a href="#get-all-concept-names">Get All Concept names</a>
+
+<ul>
+<li><a href="#parameters">Parameters</a></li>
+</ul></li>
+<li><a href="#update-concept-name">Update Concept name</a>
+
+<ul>
+<li><a href="#parameters-1">Parameters</a></li>
+</ul></li>
+</ul>
+<h2 id='get-all-concept-names'>Get All Concept names</h2>
+<ul>
+<li>Retrieve all concept name subresources of a concept resource by target_concept_uuid. Returns a 404 Not Found status if concept name not exists. If the user isnot logged in to perform this action, a 401 Unauthorized status returned</li>
+</ul>
+
+<p><code>GET /concept_names</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name for the concept</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>String</td>
+<td>Language to record concept name</td>
+</tr>
+<tr>
+<td>localePreferred</td>
+<td>String</td>
+<td>This is the preferred name to use within a locale. By default, this is the fully-specified name; however, full-specified names are sometimes long and more detailed than necessary for day-to-day use. In those cases, a synonym can be defined to be the locale-preferred name. There can only be one preferred name within a locale. The primary term should be the word(s) used most often by those who will have access to the records to prevent duplicate concept creation.</td>
+</tr>
+<tr>
+<td>conceptNameType</td>
+<td>String</td>
+<td>Type of the name to be specified.</td>
+</tr>
+</tbody></table>
+<h2 id='update-concept-name'>Update Concept name</h2>
+<ul>
+<li>Updates a concept name subresource value with given UUID, this method will only modify value of the subresource. Returns a 404 Not Found status if concept name not exists. If the user is not logged in to perform this action, a 401 Unauthorized status returned.</li>
+</ul>
+
+<p><code>PUT /concept_names/:uuid</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name for the concept</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>String</td>
+<td>Language to record concept name</td>
+</tr>
+<tr>
+<td>localePreferred</td>
+<td>String</td>
+<td>This is the preferred name to use within a locale. By default, this is the fully-specified name; however, full-specified names are sometimes long and more detailed than necessary for day-to-day use. In those cases, a synonym can be defined to be the locale-preferred name. There can only be one preferred name within a locale. The primary term should be the word(s) used most often by those who will have access to the records to prevent duplicate concept creation.</td>
+</tr>
+<tr>
+<td>conceptNameType</td>
+<td>String</td>
+<td>Type of the name to be specified.</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,52 @@
+<h2 id='concept-datatypes'>Concept datatypes</h2><h2 id='overview'>Overview</h2>
+<ul>
+<li>Concept Data type defines the structured format you desired the data to be represented.</li>
+<li>Current types are as follows:</li>
+<li>Numeric
+Any data represented numerically, also allows you to classify critical values and units, e.g., age, height, and liters consumed per day.</li>
+</ul>
+
+<ol>
+<li><p>Coded
+Allows answers to be only those provided, since value determined by term dictionary lookup (i.e., term identifier) e.g., blood type can only be “A,” “B,” &quot;AB,&quot; or “O.”.</p></li>
+<li><p>Text
+Open-ended responses.</p></li>
+<li><p>N/A
+The standard datatype for any non-query-like concepts (answers or things), e.g., symptoms, diagnoses, findings, anatomy, misc.</p></li>
+<li><p>Document
+Pointer to a binary or text-based document (e.g., clinical document, RTF, XML, EKG, image, etc.) stored in complex_obs table.</p></li>
+<li><p>Date
+Structured day, month, and year.</p></li>
+<li><p>Time
+Structured time response.</p></li>
+<li><p>DateTime
+Structured response including both the date and the time</p></li>
+<li><p>Boolean
+Checkbox response, e.g., yes or no queries</p></li>
+<li><p>Rule
+Value derived from other data</p></li>
+<li><p>Structured Numeric
+Complex numeric values possible (ie, &lt;5, 1-10, etc.).</p></li>
+<li><p>Complex
+Complex value, analogous to HL7 Embedded Datatype.</p></li>
+</ol>
+<h2 id='list-all-concept-datatypes'>List all concept datatypes</h2>
+<p><code>GET concept_datatypes</code></p>
+
+<blockquote>
+<p>List all non-retired concept data types.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Basic YWRtaW46QWRtaW4xMjM=</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/openmrs/api/v1/concept_datatypes</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div>
